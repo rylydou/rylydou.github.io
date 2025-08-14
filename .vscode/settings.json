@@ -1,5 +1,10 @@
 {
-	"yaml.schemas": {
-		"https://json.schemastore.org/github-workflow.json": "file:///home/ciber_turtle/Code/rylydou.github.io/.github/workflows/deploy.yml"
+	"explorer.sortOrder": "filesFirst",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
 	}
 }

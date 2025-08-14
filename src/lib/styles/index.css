@@ -1,0 +1,105 @@
+@import "fonts/hyperlegible.css";
+
+@import "reset.css";
+@import "vars.css";
+
+@import "components/button.css";
+@import "components/dropdown.css";
+@import "components/entry.css";
+@import "components/form.css";
+@import "components/separator.css";
+@import "components/tab.css";
+@import "components/toast.css";
+@import "components/tooltip.css";
+
+@keyframes focus-outline {
+	from {
+		outline-color: var(--primary);
+	}
+
+	to {
+		outline-color: color-mix(in oklab, var(--primary), white 10%);
+	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+html {
+	--font-sans: "hyperlegible", ui-sans-serif, sans-serif;
+	--font-mono: "JetBrains Mono", "Iosevka", "Fira Code", "Fira Mono", ui-monospace, monospace;
+
+	--focus-animation: infinite alternate ease-in-out 1s focus-outline;
+
+	user-select: none;
+
+	font-size: 14px;
+	line-height: 20px;
+	font-family: var(--font-sans);
+
+	background-color: var(--base-bg);
+	color: var(--base-fg);
+	accent-color: var(--primary);
+	caret-color: currentColor;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+:disabled {
+	filter: opacity(33%);
+}
+
+::selection {
+	background-color: var(--primary);
+	color: var(--primary-fg);
+}
+
+:focus-visible {
+	outline: solid 2px var(--primary);
+	outline-offset: 2px;
+	animation: var(--focus-animation);
+}
+
+::-webkit-scrollbar {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--base-bg);
+	border: solid 4px var(--base-bg);
+	border-radius: 1rem;
+
+	&:hover {
+		background-color: var(--border);
+	}
+}
+
+.layout {
+	width: min(80rem, calc(100dvw - 4rem));
+	margin-inline: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.list-grid {
+	display: grid;
+	/* grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); */
+	grid-template-columns: repeat(auto-fit, minmax(12rem, 24rem));
+	gap: 1rem;
+}
+
+.animate-blink {
+	animation: blink 1.5s infinite steps(1);
+}
