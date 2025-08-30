@@ -87,10 +87,8 @@ body {
 }
 
 .layout {
-	width: min(80rem, calc(100dvw - 4rem));
+	width: min(1000px, calc(100dvw - 4rem));
 	margin-inline: auto;
-	display: flex;
-	flex-direction: column;
 }
 
 .list-grid {
